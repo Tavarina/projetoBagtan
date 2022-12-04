@@ -1,38 +1,65 @@
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("SlidesCarusel");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+
 function carregaDicionario() {
     var biografias = {
         bio01: {
             nome: "BTS",
-            imagem: "https://lumiere-a.akamaihd.net/v1/images/bts_10e2829a.jpeg?region=0,0,4096,3121",
+            imagem:("./assets/img/bts-casabranca.jpg"),
             descricao: " ",
             citacao: " "
         },
         bio02: {
             nome: "Bts",
-            imagem: "https://lumiere-a.akamaihd.net/v1/images/bts_ok_9955722d.jpeg?region=0,120,1280,720&width=960",
+            imagem:("./assets/img/bts-casabranca.jpg"),
             descricao: " ",
             citacao: " "
         },
         bio03: {
             nome: "bts",
-            imagem: "https://www.ofuxico.com.br/wp-content/uploads/2022/10/bts-confira-as-musicas-solo-dos-integrantes-do-grupo-foto.jpg",
+            imagem: ("./assets/img/bts-casabranca.jpg"),
             descricao: " ",
             citacao: " "
         },
         bio04: {
             nome: " ",
-            imagem: "https://www.ofuxico.com.br/wp-content/uploads/2022/10/bts-confira-as-musicas-solo-dos-integrantes-do-grupo-foto.jpg",
+            imagem:("./assets/img/bts-casabranca.jpg"),
             descricao: " ",
             citacao: " "
         },
         bio05: {
             nome: " ",
-            imagem: "https://www.ofuxico.com.br/wp-content/uploads/2022/10/bts-confira-as-musicas-solo-dos-integrantes-do-grupo-foto.jpg",
+            imagem:("./assets/img/bts-casabranca.jpg"),
             descricao: " ",
             citacao: " "
         },
         bio06: {
             nome: " ",
-            imagem: "https://www.ofuxico.com.br/wp-content/uploads/2022/10/bts-confira-as-musicas-solo-dos-integrantes-do-grupo-foto.jpg",
+            imagem:("./assets/img/bts-casabranca.jpg"),
             descricao: " ",
             citacao: " "
         },
